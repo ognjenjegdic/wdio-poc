@@ -10,9 +10,9 @@ Setup git
 
 Setup
 -----
-'git clone https://github.com/ognjenjegdic/wdio-poc.git'
+`git clone https://github.com/ognjenjegdic/wdio-poc.git`
 
-'npm i'
+`npm i`
 
 add environment variables
 EMAIL
@@ -21,5 +21,5 @@ PASSWORD
 
 Run tests
 -----
-'npx wdio run ./wdio.conf.js'
+`npx wdio run ./wdio.conf.js`
 
