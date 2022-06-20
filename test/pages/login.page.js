@@ -40,6 +40,11 @@ class LoginPage extends Page {
         await this.btnSubmit.click();
     }
 
+    async performValidLogin (email,password) {
+        await this.enterEmail(email);
+        await this.enterPassword(password);
+    }
+
     async getProfileName () {
         return await this.profileName.getText();
     }

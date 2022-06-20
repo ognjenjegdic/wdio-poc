@@ -1,11 +1,10 @@
 const LoginPage = require('../pages/login.page');
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
+describe('Login', () => {
+    it('User is able to log in successfully', async () => {
         await LoginPage.open();
-        await LoginPage.enterEmail(process.env.EMAIL);
-        await LoginPage.enterPassword(process.env.PASSWORD);
-        let profileName = await LoginPage.getProfileName();
+        await LoginPage.performValidLogin(process.env.EMAIL, process.env.PASSWORD)
+        const profileName = await LoginPage.getProfileName();
         expect(profileName).toBe("Ognjen");
     });
 });
