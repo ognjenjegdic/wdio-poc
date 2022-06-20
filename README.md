@@ -5,6 +5,7 @@ PoC - Webdriverio - smoke tests for Entelo
 Prerequisits
 -----
 Install nodejs
+
 Setup git
 
 
@@ -15,7 +16,9 @@ Setup
 `npm i`
 
 add environment variables
+
 EMAIL
+
 PASSWORD
 
 
