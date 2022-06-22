@@ -45,10 +45,6 @@ class LoginPage extends Page {
         await this.enterPassword(password);
     }
 
-    async getProfileName () {
-        return await this.profileName.getText();
-    }
-
     /**
      * overwrite specific options to adapt it to page object
      */
