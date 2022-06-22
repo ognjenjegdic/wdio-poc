@@ -21,10 +21,9 @@ Execute following commands:
 
 `npm i`
 
-Create .env file in the root of the project and add environment variables
+Create .env file in the root of the project and add environment variables (look at .env.example for reference)
 
-EMAIL="your value"
-
+EMAIL="your value"\
 PASSWORD="your value"
 
 
