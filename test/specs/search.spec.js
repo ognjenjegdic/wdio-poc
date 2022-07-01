@@ -1,7 +1,7 @@
 const LoginPage = require('../pages/login.page');
 const SearchPage = require('../pages/search.page');
 
-describe('Homepage sections', () => {
+describe('Search page', () => {
 
     beforeAll('Login', async () => {
         await LoginPage.open();
@@ -22,7 +22,31 @@ describe('Homepage sections', () => {
     it('Entelo suggests section is displayed', async () => {
         const enteloSuggest = await SearchPage.enteloSuggestsSections.getText();
         expect(enteloSuggest).toBe("ENTELO SUGGESTS");
-    }); 
+    });
+
+    it('User can search from recent searches when search field is clicked', async () => {
+        await SearchPage.searchField.click();
+        await SearchPage.waitForClick();
+        await SearchPage.recentSearchFirstItem.click();
+        await SearchPage.searchResultsWrapper.waitForExist({timeout: 10000});
+        expect(await SearchPage.searchResultsWrapper.isDisplayed()).toBe(true);
+    });
+
+    it('User can search from suggested searches when search field is clicked', async () => {
+        await SearchPage.open();
+        await SearchPage.searchField.click();
+        await SearchPage.waitForDropdownToBeOpened();
+        await SearchPage.suggestedSearchFirstItem.click();
+        await SearchPage.searchResultsWrapper.waitForExist({timeout: 10000});
+        expect(await SearchPage.searchResultsWrapper.isDisplayed()).toBe(true);
+    });
+
+    it('User can search from suggested searches ', async () => {
+        await SearchPage.open();
+        await SearchPage.enteloSuggestsLink.click();
+        await SearchPage.searchResultsWrapper.waitForExist({timeout:20000});
+        expect(await SearchPage.searchResultsWrapper.isDisplayed()).toBe(true);
+    });
 
 });
 
