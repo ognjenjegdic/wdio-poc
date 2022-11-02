@@ -26,7 +26,7 @@ describe('Search page', () => {
 
     it('User can search from recent searches when search field is clicked', async () => {
         await SearchPage.searchField.click();
-        await SearchPage.waitForClick();
+        await SearchPage.waitForDropdownToBeOpened();
         await SearchPage.recentSearchFirstItem.click();
         await SearchPage.searchResultsWrapper.waitForExist({timeout: 10000});
         expect(await SearchPage.searchResultsWrapper.isDisplayed()).toBe(true);
